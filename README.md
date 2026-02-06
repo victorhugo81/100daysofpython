@@ -46,14 +46,6 @@ Each day's project can be run independently:
 uv run [file_name.py]
 ```
 
-## Project Index
-
-| Day | File Name     | Project Description 
-|-----| ------------- | -----------------------------------------------------------|
-| 001 | [day001.py](https://github.com/victorhugo81/100daysofpython/blob/main/day001.py) | Band Name Generator 
-| 001 | [day002.py](https://github.com/victorhugo81/100daysofpython/blob/main/day002.py) | Tip Calculator
-| 003 | [day003.py](https://github.com/victorhugo81/100daysofpython/blob/main/day003.py) | The Pyramid Escape Room
-
 
 ## Topics Covered
 
@@ -67,6 +59,17 @@ uv run [file_name.py]
 - **Days 71-80:** Advanced Python Concepts
 - **Days 81-90:** Projects and Problem Solving
 - **Days 91-100:** Capstone Projects
+
+
+
+## Project Index
+
+| Day | File Name     | Project Description 
+|-----| ------------- | -----------------------------------------------------------|
+| 001 | [day001.py](https://github.com/victorhugo81/100daysofpython/blob/main/day001.py) | Band Name Generator 
+| 001 | [day002.py](https://github.com/victorhugo81/100daysofpython/blob/main/day002.py) | Tip Calculator
+| 003 | [day003.py](https://github.com/victorhugo81/100daysofpython/blob/main/day003.py) | The Pyramid Escape Room
+
 
 
 ## License

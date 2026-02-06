@@ -1,10 +1,12 @@
 # ======================
-# Day 3: The Pyramid Escape Room
+# Project Name: Day 3 - The Pyramid Escape Room
+# Section: Beginner Python Projects
+# Description: Learn how to use conditional statements and nested conditions to create an interactive text-based adventure game in Python.
 # ======================
 
 def main():
 
-
+    # ASCII art for the game
     print('''
         .......  ...  ...  ...  ..       *        ..  ....  .....  .......
         ........  .... .... .....  .   .%/\      .. ....  .....  .....  ..
@@ -38,7 +40,6 @@ def main():
     *******************************************************************
           ''')
     
-
     treasure_reward = '''
  _______________________________________________________________________________
 |          |                   |                  |                     |       |
@@ -129,21 +130,16 @@ _________________________________________
     # ======================
     # GAME START
     # ======================
-
     print("Welcome to The Pyramid Escape Room.")
     print("Your mission is to find your way out and discover the treasure.\n")
-
     print("You walk into a room and realize you are inside a pyramid.")
     print("There are two signs on the wall and a door in front of you.\n")
-
     print('"Choose the right answer only. Wrong answers will end your game."')
     print("*****************************************************************\n")
-
 
     # ======================
     # FIRST DECISION (RIDDLE)
     # ======================
-
     print("*****************************************************************\n")
     print("First Choice - The Riddle:")
     print("I have keys but no locks,")
@@ -152,50 +148,44 @@ _________________________________________
     print("What am I?\n")
     print("*****************************************************************\n")
 
+    # Get user input for the first decision
     choice1 = input("Your answer: ").lower()
-
+    # Check the user's answer and proceed accordingly
     if choice1 == "keyboard":
-
         print("\nCorrect! A hidden door opens.")
 
         # ======================
         # SECOND DECISION (PATH)
         # ======================
-
         print("\nInside the chamber you see two paths: left and right.")
         choice2 = input("Which way do you go? (left/right): ").lower()
-
+        # Check the user's answer and proceed accordingly
         if choice2 == "left":
-
             print("\nYou walk down the left path and find three color doors.")
             print("Only one is safe!\n")
 
             # ======================
             # THIRD DECISION (DOORS)
             # ======================
-
             choice3 = input("Choose a door: red, yellow, or blue: ").lower()
-
+            # Check the user's answer and proceed accordingly
             if choice3 == "red":
                 print("\nIt's a room full of fire!")
                 print(you_lost)
-
             elif choice3 == "yellow":
                 print("\nYou found the treasure! You Win!")
                 print(treasure_reward)
-
             elif choice3 == "blue":
                 print("\nYou enter a room of beasts!")
                 print(the_beast)
             else:
                 print("\nWrong door. The floor collapses.")
                 print(you_lost)
-
     else:
         print("\nWrong answer. The floor collapses.")
         print(you_lost)
 
 
-
+# Run the main function when the script is executed
 if __name__ == "__main__":
     main()
