@@ -1,6 +1,7 @@
 # ======================
-# Day 1: Band Name Generator
-# Instructions: Working with variables in Python to manage user input data. 
+# Project Name: Day 1 - Band Name Generator
+# Section: Beginner Python Projects
+# Description: Working with variables in Python to manage user's input data. 
 # ======================
 
 
