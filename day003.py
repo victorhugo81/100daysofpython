@@ -1,9 +1,9 @@
 # ======================
-# ASCII ART (stored as strings, NOT print)
+# Day 3: The Pyramid Escape Room
 # ======================
 
 def main():
-    print("Welcome to Python Pizza Deliveries!")
+
 
     print('''
         .......  ...  ...  ...  ..       *        ..  ....  .....  .......
