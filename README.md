@@ -71,12 +71,12 @@ uv run [file_name.py]
 
 ## Project Index
 
-| Day | File Name     | Project Level     | Project Description 
-|-----| ------------- | ----------------- | --------------------------------------- |
-| 001 | [day001.py](https://github.com/victorhugo81/100daysofpython/blob/main/day001/day001.py) | Beginner | Band Name Generator 
-| 001 | [day002.py](https://github.com/victorhugo81/100daysofpython/blob/main/day002/day002.py) | Beginner | Tip Calculator
-| 003 | [day003.py](https://github.com/victorhugo81/100daysofpython/blob/main/day003/day003.py) | Beginner | The Pyramid Escape Room
-| 004 | [day004.py](https://github.com/victorhugo81/100daysofpython/blob/main/day004/day004.py) | Beginner | The Rock, Paper, Scissors Game
+| Day | Project Level     | Project Description 
+|-----| ----------------- | --------------------------------------- |
+| [001](https://github.com/victorhugo81/100daysofpython/blob/main/day001/day001.py) | Beginner | Band Name Generator 
+| [002](https://github.com/victorhugo81/100daysofpython/blob/main/day002/day002.py) | Beginner | Tip Calculator
+| [003](https://github.com/victorhugo81/100daysofpython/blob/main/day003/day003.py) | Beginner | The Pyramid Escape Room
+| [004](https://github.com/victorhugo81/100daysofpython/blob/main/day004/day004.py) | Beginner | The Rock, Paper, Scissors Game
 
 
 
