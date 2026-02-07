@@ -10,11 +10,17 @@ This repository tracks my progress through the "100 Days of Python" challenge, w
 
 ```
 100daysofpython/
-├── day001.py - Day 1 Project
-├── day002.py - Day 2 Project
-├── day003.py - Day 3 Project
-├── day003.py - Day 3 Project
+|
+├── day001/
+│   └── day001.py  # Day 1 Project
+|
+├── day002/
+│   └── day002.py  # Day 2 Project
+|
+├── day003/
+│   └── day003.py  # Day 3 Project
 ├── ...
+|
 ├── pyproject.toml
 └── README.md
 ```
@@ -63,15 +69,14 @@ uv run [file_name.py]
 - **Days 91-100:** Capstone Projects
 
 
-
 ## Project Index
 
 | Day | File Name     | Project Level     | Project Description 
 |-----| ------------- | ----------------- | --------------------------------------- |
-| 001 | [day001.py](https://github.com/victorhugo81/100daysofpython/blob/main/day001.py) | Beginner | Band Name Generator 
-| 001 | [day002.py](https://github.com/victorhugo81/100daysofpython/blob/main/day002.py) | Beginner | Tip Calculator
-| 003 | [day003.py](https://github.com/victorhugo81/100daysofpython/blob/main/day003.py) | Beginner | The Pyramid Escape Room
-| 004 | [day004.py](https://github.com/victorhugo81/100daysofpython/blob/main/day004.py) | Beginner | The Rock, Paper, Scissors Game
+| 001 | [day001.py](https://github.com/victorhugo81/100daysofpython/blob/main/day001/day001.py) | Beginner | Band Name Generator 
+| 001 | [day002.py](https://github.com/victorhugo81/100daysofpython/blob/main/day002/day002.py) | Beginner | Tip Calculator
+| 003 | [day003.py](https://github.com/victorhugo81/100daysofpython/blob/main/day003/day003.py) | Beginner | The Pyramid Escape Room
+| 004 | [day004.py](https://github.com/victorhugo81/100daysofpython/blob/main/day004/day004.py) | Beginner | The Rock, Paper, Scissors Game
 
 
 
