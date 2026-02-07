@@ -41,7 +41,7 @@ def main():
 
     """
 
-    print("Welcome to the Rock, Paper, Scissors Game!")
+    print("Welcome to the Rock, Paper, Scissors Game!" + "\n" + rock)
 
 
 
