@@ -9,7 +9,7 @@ def main():
 
     # Get user input for bill total, tip percentage, and number of people
     sub_total = float(input("What was the total bill?\n$"))
-    tip = int(input("How much tip would you like to give? 10, 12, or 15?\n"))
+    tip = int(input("How much tip would you like to give? $10, $12, or $15?\n"))
     people = int(input("How many people to split the bill?\n"))
 
     # Calculate the total bill including tip and how much each person should pay
