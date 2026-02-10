@@ -12,16 +12,16 @@ This repository tracks my progress through the "100 Days of Python" challenge, w
 100daysofpython/
 |
 ├── day001/
-│   └── day001.py  # Day 1 Project
+│   └── main.py  # Day 1 Project
 |
 ├── day002/
-│   └── day002.py  # Day 2 Project
+│   └── main.py  # Day 2 Project
 |
 ├── day003/
-│   └── day003.py  # Day 3 Project
+│   └── main.py  # Day 3 Project
 ├── ...
 |
-├── pyproject.toml
+├── .gitignore
 └── README.md
 ```
 
@@ -39,7 +39,11 @@ git clone git@github.com:victorhugo81/100daysofpython.git
 cd 100daysofpython
 ```
 
-2. Install dependencies with uv:
+2. Every folder have uv dependency UV List in its folder.
+
+3. cd into the new a project folder.
+
+4. Install dependencies with uv:
 ```bash
 uv sync
 ```
@@ -73,11 +77,11 @@ uv run [file_name.py]
 
 | Day | Project Level     | Project Description 
 |-----| ----------------- | --------------------------------------- |
-| [001](https://github.com/victorhugo81/100daysofpython/blob/main/day001/day001.py) | Beginner | Band Name Generator 
-| [002](https://github.com/victorhugo81/100daysofpython/blob/main/day002/day002.py) | Beginner | Tip Calculator
-| [003](https://github.com/victorhugo81/100daysofpython/blob/main/day003/day003.py) | Beginner | The Pyramid Escape Room
-| [004](https://github.com/victorhugo81/100daysofpython/blob/main/day004/day004.py) | Beginner | The Rock, Paper, Scissors Game
-| [005](https://github.com/victorhugo81/100daysofpython/blob/main/day005/day005.py) | Beginner | Password Generator
+| [001](https://github.com/victorhugo81/100daysofpython/blob/main/day001/main.py) | Beginner | Band Name Generator 
+| [002](https://github.com/victorhugo81/100daysofpython/blob/main/day002/main.py) | Beginner | Tip Calculator
+| [003](https://github.com/victorhugo81/100daysofpython/blob/main/day003/main.py) | Beginner | The Pyramid Escape Room
+| [004](https://github.com/victorhugo81/100daysofpython/blob/main/day004/main.py) | Beginner | The Rock, Paper, Scissors Game
+| [005](https://github.com/victorhugo81/100daysofpython/blob/main/day005/main.py) | Beginner | Password Generator
 
 
 
