@@ -77,6 +77,7 @@ uv run [file_name.py]
 | [002](https://github.com/victorhugo81/100daysofpython/blob/main/day002/day002.py) | Beginner | Tip Calculator
 | [003](https://github.com/victorhugo81/100daysofpython/blob/main/day003/day003.py) | Beginner | The Pyramid Escape Room
 | [004](https://github.com/victorhugo81/100daysofpython/blob/main/day004/day004.py) | Beginner | The Rock, Paper, Scissors Game
+| [005](https://github.com/victorhugo81/100daysofpython/blob/main/day005/day005.py) | Beginner | Password Generator
 
 
 

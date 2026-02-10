@@ -14,7 +14,7 @@ def main():
     symbols = ['!', '@', '#', '$', '%', '^', '&', '*', '+']
     numbers = ['0','1','2','3','4','5','6','7','8','9']
 
-    print("Welcome to the Python Password Generator Project!")
+    print("Welcome to the Python Password Generator!")
 
     pwd_letters = int(input("How many characters would you like in your password? "))
     pwd_symbols = int(input("How many symbols would you like? "))
