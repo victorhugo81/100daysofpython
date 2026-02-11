@@ -76,8 +76,19 @@ def main():
     # -----------------------------
     plt.figure(figsize=(10, 6))
 
+    # plot lines
     plt.plot(numeric_years, y, marker="o", linewidth=2, label="Actual")
     plt.plot(future_x, predictions, marker="o", linestyle="--", label="Predicted")
+
+    # ---- ADD VALUE LABELS ----
+    # actual values
+    for x_val, y_val in zip(numeric_years, y):
+        plt.text(x_val, y_val + 55, f"{int(y_val)}", ha="center", fontsize=9)
+
+    # predicted values
+    for x_val, y_val in zip(future_x, predictions):
+        plt.text(x_val, y_val + 55, f"{int(y_val)}", ha="center", fontsize=9)
+    # --------------------------
 
     all_x = list(numeric_years) + list(future_x)
     all_labels = years + future_years
@@ -87,7 +98,7 @@ def main():
     plt.ylabel("Number of Students")
     plt.title("Student Enrollment Forecast")
     plt.legend()
-    plt.grid(True)
+    plt.grid(True, color="lightgray", linestyle="--", linewidth=0.7, alpha=0.7)
 
     plt.tight_layout()
 
