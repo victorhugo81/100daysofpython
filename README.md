@@ -82,7 +82,7 @@ uv run [file_name.py]
 | [003](https://github.com/victorhugo81/100daysofpython/blob/main/day003/main.py) | Beginner | The Pyramid Escape Room
 | [004](https://github.com/victorhugo81/100daysofpython/blob/main/day004/main.py) | Beginner | The Rock, Paper, Scissors Game
 | [005](https://github.com/victorhugo81/100daysofpython/blob/main/day005/main.py) | Beginner | Password Generator
-
+| [006](https://github.com/victorhugo81/100daysofpython/blob/main/day006/main.py) | Beginner | Number Guessing Game
 
 
 ## License
