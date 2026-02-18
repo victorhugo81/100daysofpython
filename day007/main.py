@@ -8,6 +8,7 @@
 import random
 from hangman_words import word_list
 from hangman_art import HANGMANART, LOGO, TROPHY
+ 
 
 def hangman():
     # Display the game logo at the start 

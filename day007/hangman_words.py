@@ -47,5 +47,5 @@ word_list = [
     "zamasu",
     "gokublack",
     "cabba",
-    "dyspo",
+    "dyspo"
 ]
