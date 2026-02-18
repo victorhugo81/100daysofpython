@@ -1,76 +1,44 @@
 # ======================
-# Project Name: Day 4 - The Rock, Paper, Scissors Game
+# Project Name: Day 4 - Python Password Generator
 # Section: Beginner Python Projects
-# Description: Randomization and Python Lists
+# Description: Python loops
 # ======================
 import random
 
 def main():
-    # ASCII art for the game
+    letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+               'n','o','p','q','r','s','t','u','v','w','x','y','z',
+               'A','B','C','D','E','F','G','H','I','J','K','L','M',
+               'N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
+    symbols = ['!', '@', '#', '$', '%', '^', '&', '*', '+']
+    numbers = ['0','1','2','3','4','5','6','7','8','9']
 
-    rock ="""
-        ______
-    ---'   ___)
-        (____)
-        (____)
-        (____)
-    ---._(___)
-    """
+    print("Welcome to the Python Password Generator!")
 
-    paper ="""
-            __ 
-          /   )
-    ---''    /_______
-            _________)
-            __________)
-            _________)
-    ---.___________)
-    """
+    pwd_letters = int(input("How many characters would you like in your password? "))
+    pwd_symbols = int(input("How many symbols would you like? "))
+    pwd_numbers = int(input("How many numbers would you like? "))
 
-    scissors = """
-        ______
-    ---'  ____)___
-            ______)
-        __________)
-        (____)
-    ---.__(___)
-    """
+    password_chars = []
 
-    game_images = [rock, paper, scissors]
+    # pick random letters
+    for char in range(pwd_letters):
+        password_chars.append(random.choice(letters))
 
-    print("Welcome to the Rock, Paper, Scissors Game!\n")
-    print("Type a number to play the game. If you type an invalid number or character, you lose!\n")
-    print("Rock = 0\nPaper = 1\nScissors = 2\n")
+    # pick random symbols
+    for symbol in range(pwd_symbols):
+        password_chars[symbol] = random.choice(symbols)
 
+    # pick random numbers
+    for number in range(pwd_numbers):
+        password_chars[pwd_symbols + number] = random.choice(numbers)
 
-    # User input
-    user_choice = input("What do you choose? ")
-    # User choice with input validation
-    if user_choice.isdigit() and int(user_choice) in [0, 1, 2]:
-        user_choice = int(user_choice)
-        print(game_images[int(user_choice)])
+    # shuffle so it's not predictable like letters→symbols→numbers
+    random.shuffle(password_chars)
+    password = "".join(password_chars)
 
-        # Computer choice
-        computer_choice = random.randint(0, 2)
-        print(f"Computer chose: {game_images[computer_choice]}")
-
-        # comparing player choice
-        if user_choice == 0 and computer_choice == 2:
-            print("You win!")
-        elif user_choice == 1 and computer_choice == 0:
-            print("You win!")
-        elif user_choice == 2 and computer_choice == 1:
-            print("You win!")
-        elif user_choice == computer_choice:
-            print("It's a draw!")
-        else:
-            print("You lose!")
-
-    else:
-        print("You typed an invalid number or character. You lose!")
-
-
+    print(f"Your password is: {password}")
 
 
 

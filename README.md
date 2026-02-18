@@ -77,12 +77,13 @@ uv run [file_name.py]
 
 | Day | Project Level     | Project Description 
 |-----| ----------------- | --------------------------------------- |
-| [001](https://github.com/victorhugo81/100daysofpython/blob/main/day001/main.py) | Beginner | Band Name Generator 
-| [002](https://github.com/victorhugo81/100daysofpython/blob/main/day002/main.py) | Beginner | Tip Calculator
-| [003](https://github.com/victorhugo81/100daysofpython/blob/main/day003/main.py) | Beginner | The Pyramid Escape Room
-| [004](https://github.com/victorhugo81/100daysofpython/blob/main/day004/main.py) | Beginner | The Rock, Paper, Scissors Game
-| [005](https://github.com/victorhugo81/100daysofpython/blob/main/day005/main.py) | Beginner | Password Generator
-| [006](https://github.com/victorhugo81/100daysofpython/blob/main/day006/main.py) | Beginner | Number Guessing Game
+| [000](https://github.com/victorhugo81/100daysofpython/blob/main/day000/main.py) | Beginner | Band Name Generator 
+| [001](https://github.com/victorhugo81/100daysofpython/blob/main/day001/main.py) | Beginner | Tip Calculator
+| [002](https://github.com/victorhugo81/100daysofpython/blob/main/day002/main.py) | Beginner | The Pyramid Escape Room
+| [003](https://github.com/victorhugo81/100daysofpython/blob/main/day003/main.py) | Beginner | The Rock, Paper, Scissors Game
+| [004](https://github.com/victorhugo81/100daysofpython/blob/main/day004/main.py) | Beginner | Password Generator
+| [005](https://github.com/victorhugo81/100daysofpython/blob/main/day005/main.py) | Beginner | Number Guessing Game
+| [006](https://github.com/victorhugo81/100daysofpython/blob/main/day006/main.py) | Beginner | Age Calculator
 
 
 ## License

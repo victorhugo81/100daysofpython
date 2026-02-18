@@ -1,64 +1,59 @@
 # ======================
-# Project Name: Day 6 - Python Number Guessing Game
+# Project Name: Day 6 - Python Age Calculator
 # Section: Beginner Python Projects
-# Description: Python while loops
+# Description: Python while loops, dates and time
 # ======================
 
-import random
+
+from datetime import datetime
 
 
-trophy ="""
-    * * * * * * * * * * * * * * *
-    *         ___________       *
-    *       '._==_==_=_.'       *
-    *        .-\:      /-.      *   
-    *       | (|:.     |) |     *
-    *        '-|:.     |-'      *
-    *          \::.    /        *
-    *           '::. .'         *
-    *             ) (           *
-    *           _.' '._         *
-    * * * * * * * * * * * * * * *
-    """
-
-def number_guessing_game():
-    # Generate a random number between 1 and 100
-    secret_number = random.randint(1, 100)
-    attempts = 0
-    
-    print("Welcome to the Number Guessing Game!")
-    print("Pick a number between 1 and 100. Try to guess it!")
-    
+def birthdate():
     while True:
-        # Get user input
-        print("**********************************************")
-        guess = input("Enter your guess (or 'q' to quit): ")
-        
-        # Check if user wants to quit
-        if guess.lower() == 'q':
-            print(f"Thanks for playing! The number was {secret_number}.")
+        birth_input = input("Enter your birthdate (MM/DD/YYYY) or 'q' to quit: ")
+
+        if birth_input.lower() == 'q':
+            print("Exiting program.")
             break
-        
-        # Try to convert input to integer
+
         try:
-            guess = int(guess)
-            attempts += 1
-            
-            # Check the guess
-            if guess < secret_number:
-                print(" - Your guessed number is too low! Try again.")
-            elif guess > secret_number:
-                print(" - Your guessed number is too high! Try again.")
-            else:
-                print(f" - Congratulations! You guessed it in {attempts} attempts.")
-                print(trophy)
-                break
-                
+            birthdate = datetime.strptime(birth_input, "%m/%d/%Y")
         except ValueError:
-            print(" - Please enter a valid number or 'q' to quit.")
+            print("Error: Wrong format. Please use MM/DD/YYYY.")
+            continue  # Ask again
+
+        now = datetime.now()
+        time_in_between = now - birthdate
+        total_days = time_in_between.days
+        total_seconds = int(time_in_between.total_seconds())
+        total_hours = total_seconds // 3600
+        total_minutes = total_seconds // 60
+
+        # Calculate years and months manually
+        years = now.year - birthdate.year
+        months = now.month - birthdate.month
+        days = now.day - birthdate.day
+
+        if days < 0:
+            months -= 1
+        if months < 0:
+            years -= 1
+            months += 12
+
+        total_months = years * 12 + months
+        formatted_birthdate = birthdate.strftime("%B %d, %Y")
+
+        print(f"\nIf you were born on {formatted_birthdate}, you have lived:")
+        print(f"Total Years: {years:,}")
+        print(f"Total Months: {total_months:,}")
+        print(f"Total Days: {total_days:,}")
+        print(f"Total Hours: {total_hours:,}")
+        print(f"Total Minutes: {total_minutes:,}")
+        print(f"Total Seconds: {total_seconds:,}\n")
+
 
 
 
 # Run the game
 if __name__ == "__main__":
-    number_guessing_game()
+    birthdate()

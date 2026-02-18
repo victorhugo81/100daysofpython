@@ -1,47 +1,64 @@
 # ======================
-# Project Name: Day 5 - Python Password Generator
+# Project Name: Day 5 - Python Number Guessing Game
 # Section: Beginner Python Projects
-# Description: Python loops
+# Description: Python while loops
 # ======================
+
 import random
 
-def main():
-    letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
-               'n','o','p','q','r','s','t','u','v','w','x','y','z',
-               'A','B','C','D','E','F','G','H','I','J','K','L','M',
-               'N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
-    symbols = ['!', '@', '#', '$', '%', '^', '&', '*', '+']
-    numbers = ['0','1','2','3','4','5','6','7','8','9']
+trophy ="""
+    * * * * * * * * * * * * * * *
+    *         ___________       *
+    *       '._==_==_=_.'       *
+    *        .-\:      /-.      *   
+    *       | (|:.     |) |     *
+    *        '-|:.     |-'      *
+    *          \::.    /        *
+    *           '::. .'         *
+    *             ) (           *
+    *           _.' '._         *
+    * * * * * * * * * * * * * * *
+    """
 
-    print("Welcome to the Python Password Generator!")
+def number_guessing_game():
+    # Generate a random number between 1 and 100
+    secret_number = random.randint(1, 100)
+    attempts = 0
+    
+    print("Welcome to the Number Guessing Game!")
+    print("Pick a number between 1 and 100. Try to guess it!")
+    
+    while True:
+        # Get user input
+        print("**********************************************")
+        guess = input("Enter your guess (or 'q' to quit): ")
+        
+        # Check if user wants to quit
+        if guess.lower() == 'q':
+            print(f"Thanks for playing! The number was {secret_number}.")
+            break
+        
+        # Try to convert input to integer
+        try:
+            guess = int(guess)
+            attempts += 1
+            
+            # Check the guess
+            if guess < secret_number:
+                print(" - Your guessed number is too low! Try again.")
+            elif guess > secret_number:
+                print(" - Your guessed number is too high! Try again.")
+            else:
+                print(f" - Congratulations! You guessed it in {attempts} attempts.")
+                print(trophy)
+                break
+                
+        except ValueError:
+            print(" - Please enter a valid number or 'q' to quit.")
 
-    pwd_letters = int(input("How many characters would you like in your password? "))
-    pwd_symbols = int(input("How many symbols would you like? "))
-    pwd_numbers = int(input("How many numbers would you like? "))
-
-    password_chars = []
-
-    # pick random letters
-    for char in range(pwd_letters):
-        password_chars.append(random.choice(letters))
-
-    # pick random symbols
-    for symbol in range(pwd_symbols):
-        password_chars[symbol] = random.choice(symbols)
-
-    # pick random numbers
-    for number in range(pwd_numbers):
-        password_chars[pwd_symbols + number] = random.choice(numbers)
-
-    # shuffle so it's not predictable like letters→symbols→numbers
-    random.shuffle(password_chars)
-    password = "".join(password_chars)
-
-    print(f"Your password is: {password}")
 
 
-
-# Run the main function when the script is executed
+# Run the game
 if __name__ == "__main__":
-    main()
+    number_guessing_game()

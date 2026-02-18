@@ -1,189 +1,77 @@
 # ======================
-# Project Name: Day 3 - The Pyramid Escape Room
+# Project Name: Day 3 - The Rock, Paper, Scissors Game
 # Section: Beginner Python Projects
-# Description: Learn how to use conditional statements and nested conditions to create an interactive text-based adventure game in Python.
+# Description: Randomization and Python Lists
 # ======================
+import random
 
 def main():
-
     # ASCII art for the game
-    print('''
-        .......  ...  ...  ...  ..       *        ..  ....  .....  .......
-        ........  .... .... .....  .   .%/\      .. ....  .....  .....  ..
-        ......  ...  ...  ... ..     .%./  &.     ....  ......  ....  ....
-        .......  ....  ..  ...     .%**/     \        .....  .....  ......
-        .........  ....  ..      .%***/       &.     .....  .....  ...  ..
-        ... .......  .... .    .%.***/  .^^^^_  \      . ......  ... .....
-        ...... .....   ..    .%*****/ -'      `'.&.     .....  ... .......
-        .......     ..     .%******/  ._."""'~::,  \      . ... .....   ..
-        .... ... ...     .%*******/._'` .'"^':,  :.,&.     . ....  .......
-        .... ...       .%********/',_-^{  ( )  }    :.\       ........ ...
-        .. .... .    .%*********/%^    '.     .'     ;.&.     .  ... .....
-        .... .     .%**********/;        ".,."        ;#.\     .  . ......
-        .. ..    .%***********/  ~'.,,.          ,.-'^    &.     . ... ...
-        ... ... %************/         ""-.,.-""~           \     . . ....
-        ... ..%*************/                                &.     .. ...
-        ... %**************/                                   \     .....
-      _______ _    _ ______    _____  __   __ ____          __  __ _____ _____  
-     |__   __| |  | |  ____|  |  __ \ \ \ / /  __ \   /\   |  \/  |_   _|  __ \ 
-        | |  | |__| | |__     | |__) \ \   /| |__) | /  \  | \  / | | | | |  | |
-        | |  |  __  |  __|    |  ___/   | | |  _  / / /\ \ | |\/| | | | | |  | |
-        | |  | |  | | |____   | |       | | | | \ \/ ____ \| |  | |_| |_| |__| |
-        |_|  |_|  |_|______|  |_|       |_| |_|  \_\_/    \_\_|  |_|_____|_____/
-      ________  _____  _____         _____  _______  _____   ____   ____  __  __ 
-     |    ____|/ ____|/ ____|  /\   |  __ \|  ____| |  __ \ / __ \ / __ \|  \/  |
-     |   |__  | (___ | |      /  \  | |__) | |__    | |__) | |  | | |  | | \  / |
-     |    __|  \___ \| |     / /\ \ |  ___/|  __|   |  _  /| |  | | |  | | |\/| |
-     |   |____ ____) | |____/ ____ \| |    | |____  | | \ \| |__| | |__| | |  | |
-     |  ______|_____/ \____/_/    \_\_|    |______| |_|  \_\\____/ \____/|_|  |_|
-
-    *******************************************************************
-          ''')
-    
-    treasure_reward = '''
- _______________________________________________________________________________
-|          |                   |                  |                     |       |
-| _________|________________.=""_;=.______________|_____________________|_______|
-|                   |  ,-"_,=""     `"=.|                  |                    |   
-|___________________|__"=._o`"-._        `"=.______________|____________________|
-|          |                `"=._o`"=._      _`"=._                     |       |
-| _________|_____________________:=._o "=._."_.-="'"=.__________________|_______|
-|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |                    |
-|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|____________________|
-|          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |       |
-| _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______|
-|                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |                    |
-|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|____________________|
-|____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____|
-|/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_|
-|____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____|
-|/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_|
-|____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____|
-|/______/______/______/______/______/______/______/______/______/______/________|
-
-          '''
-    
-    you_lost = '''
-_______________________________________________ 
-|                    .                          |
-|              (  .      )        .             |
-|           )           (              )        |
-|                 .  '   .   '  .  '  .         |
-|        (    , )       (.   )  (   ',    )     |
-|         .' ) ( . )    ,  ( ,     )   ( .      |
-|      ). , ( .   (  ) ( , ')  .' (  ,    )     |
-|     (_,) . ), ) _) _,')  (, ) '. )  ,. (' )   |
-|         *                       *             |
-|            *                 *                |
-|           )       (\___/)     (               |  
-|        * /(       \ (. .)     )\ *            |
-|          # )      c\   >'    ( #              |   
-|           '         )-_/      '               |  
-|         \\|,    ____| |__    ,|//             |
-|           \ )  (  `  ~   )  ( /               |
-|            #\ / /| . ' .) \ /#                |   
-|            | \ / )   , / \ / |                |
-|             \,/ ;;,,;,;   \,/                 |
-|              _,#;,;;,;,                       |
-|             /,i;;;,,;#,;                      | 
-|            ((  %;;,;,;;,;                     |
-|             ))  ;#;,;%;;,,                    |
-|           _//    ;,;; ,#;,                    |
-|          /_)     #,;  //                      |       
-|                 //    \|_                     |
-|                 \|_    |#\                    |
-|                  |#\    -"                    |
-|                   -"                          |   
-|_______________________________________________|                   
-          '''
-    
-    the_beast = '''
-_________________________________________   
-|                                        |
-|                   (    )               |
-|                  ((((()))              |
-|                  |o\ /o)|              |
-|                  ( (  _')              |
-|                   (._.  /\__           |
-|                  ,\___,/ '  ')         |
-|    '.,_,,       (  .- .   .    )       |
-|     \   \\     ( '        )(    )      |
-|      \   \\    \.  _.__ ____( .  |     |
-|       \  /\\   .(   .'  /\  '.  )      |
-|        \(  \\.-' ( /    \/    \)       |
-|         '  ()) _'.-|/\/\/\/\/\|        |
-|             '\\ .( |\/\/\/\/\/|        |
-|               '((  \    /\    /        |
-|               ((((  '.__\/__.')        |
-|                ((,) /   ((()   )       |
-|                 "..-,  (()("   /       |
-|            pils  _//.   ((() ."        |
-|          _____ //,/" ___ ((( ', ___    |
-|                           ((  )        |
-|                            / /         |
-|                          _/,/'         |
-|                        /,/,"           |
-|________________________________________|          
-'''
 
 
-    # ======================
-    # GAME START
-    # ======================
-    print("Welcome to The Pyramid Escape Room.")
-    print("Your mission is to find your way out and discover the treasure.\n")
-    print("You walk into a room and realize you are inside a pyramid.")
-    print("There are two signs on the wall and a door in front of you.\n")
-    print('"Choose the right answer only. Wrong answers will end your game."')
-    print("*****************************************************************\n")
+    rock ="""
+        ______
+    ---'   ___)
+        (____)
+        (____)
+        (____)
+    ---._(___)
+    """
 
-    # ======================
-    # FIRST DECISION (RIDDLE)
-    # ======================
-    print("*****************************************************************\n")
-    print("First Choice - The Riddle:")
-    print("I have keys but no locks,")
-    print("I have space but no room,")
-    print("You can enter, but you can’t go outside.")
-    print("What am I?\n")
-    print("*****************************************************************\n")
+    paper ="""
+            __ 
+          /   )
+    ---''    /_______
+            _________)
+            __________)
+            _________)
+    ---.___________)
+    """
 
-    # Get user input for the first decision
-    choice1 = input("Your answer: ").lower()
-    # Check the user's answer and proceed accordingly
-    if choice1 == "keyboard":
-        print("\nCorrect! A hidden door opens.")
+    scissors = """
+        ______
+    ---'  ____)___
+            ______)
+        __________)
+        (____)
+    ---.__(___)
+    """
 
-        # ======================
-        # SECOND DECISION (PATH)
-        # ======================
-        print("\nInside the chamber you see two paths: left and right.")
-        choice2 = input("Which way do you go? (left/right): ").lower()
-        # Check the user's answer and proceed accordingly
-        if choice2 == "left":
-            print("\nYou walk down the left path and find three color doors.")
-            print("Only one is safe!\n")
+    game_images = [rock, paper, scissors]
 
-            # ======================
-            # THIRD DECISION (DOORS)
-            # ======================
-            choice3 = input("Choose a door: red, yellow, or blue: ").lower()
-            # Check the user's answer and proceed accordingly
-            if choice3 == "red":
-                print("\nIt's a room full of fire!")
-                print(you_lost)
-            elif choice3 == "yellow":
-                print("\nYou found the treasure! You Win!")
-                print(treasure_reward)
-            elif choice3 == "blue":
-                print("\nYou enter a room of beasts!")
-                print(the_beast)
-            else:
-                print("\nWrong door. The floor collapses.")
-                print(you_lost)
+    print("Welcome to the Rock, Paper, Scissors Game!\n")
+    print("Type a number to play the game. If you type an invalid number or character, you lose!\n")
+    print("Rock = 0\nPaper = 1\nScissors = 2\n")
+
+
+    # User input
+    user_choice = input("What do you choose? ")
+    # User choice with input validation
+    if user_choice.isdigit() and int(user_choice) in [0, 1, 2]:
+        user_choice = int(user_choice)
+        print(game_images[int(user_choice)])
+
+        # Computer choice
+        computer_choice = random.randint(0, 2)
+        print(f"Computer chose: {game_images[computer_choice]}")
+
+        # comparing player choice
+        if user_choice == 0 and computer_choice == 2:
+            print("You win!")
+        elif user_choice == 1 and computer_choice == 0:
+            print("You win!")
+        elif user_choice == 2 and computer_choice == 1:
+            print("You win!")
+        elif user_choice == computer_choice:
+            print("It's a draw!")
+        else:
+            print("You lose!")
+
     else:
-        print("\nWrong answer. The floor collapses.")
-        print(you_lost)
+        print("You typed an invalid number or character. You lose!")
+
+
+
 
 
 # Run the main function when the script is executed
