@@ -86,6 +86,7 @@ uv run [file_name.py]
 | [006](https://github.com/victorhugo81/100daysofpython/blob/main/day006/main.py) | Beginner | Age Calculator
 | [007](https://github.com/victorhugo81/100daysofpython/blob/main/day007/main.py) | Beginner | Dragon Ball Hangman Game
 | [008](https://github.com/victorhugo81/100daysofpython/blob/main/day008/main.py) | Beginner | Caesar Cipher Encoder & Decoder
+| [009](https://github.com/victorhugo81/100daysofpython/blob/main/day009/main.py) | Beginner | The Secret Auction
 
 
 ## License
