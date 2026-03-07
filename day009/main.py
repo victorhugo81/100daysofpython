@@ -16,10 +16,10 @@ print("*******************************************")
 
 
 def find_highest_bidder(bidding_dictionary):
-    """
-    Determines the highest bidder from the dictionary,
-    prints total bids, all bids, and the winner.
-    """
+
+    # Determines the highest bidder from the dictionary,
+    # prints total bids, all bids, and the winner.
+
 
     # Store the name of the highest bidder
     winner = ""          
