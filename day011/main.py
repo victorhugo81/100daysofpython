@@ -49,7 +49,7 @@ def compare(u_score, c_score):
     else:
         return "You lose 😤", "lose"
 
-
+# Initialize win/loss/draw counters
 wins = 0
 losses = 0
 draws = 0
@@ -58,6 +58,7 @@ def play_game():
     global wins, losses, draws
 
     print(LOGO)
+    # Initialize user and computer hands, scores, and game over flag
     user_cards = []
     computer_cards = []
     computer_score = -1
@@ -85,7 +86,7 @@ def play_game():
                 user_cards.append(deal_card())
             else:
                 is_game_over = True
-
+    # Computer's turn: the computer will keep drawing cards until it reaches a score of 17 or higher, or if it gets a Blackjack (score of 0)
     while computer_score != 0 and computer_score < 17:
         computer_cards.append(deal_card())
         computer_score = calculate_score(computer_cards)
@@ -96,6 +97,7 @@ def play_game():
     message, outcome = compare(user_score, computer_score)
     print(message)
 
+    # Update the win/loss/draw counters based on the outcome of the game
     if outcome == "win":
         wins += 1
     elif outcome == "lose":
@@ -105,6 +107,7 @@ def play_game():
 
     print(f"\nScore — Wins: {wins} | Losses: {losses} | Draws: {draws}")
 
+# Ask the user if they want to play a game of Blackjack. If they type 'y', start a new game. If they type 'n', exit the program.
 while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
     print("\n" * 20)
     play_game()
