@@ -88,6 +88,7 @@ uv run [file_name.py]
 | [008](https://github.com/victorhugo81/100daysofpython/blob/main/day008/main.py) | Beginner | Caesar Cipher Encoder & Decoder
 | [009](https://github.com/victorhugo81/100daysofpython/blob/main/day009/main.py) | Beginner | The Secret Auction
 | [010](https://github.com/victorhugo81/100daysofpython/blob/main/day010/main.py) | Beginner | The Calculator
+| [011](https://github.com/victorhugo81/100daysofpython/blob/main/day011/main.py) | Beginner | Blackjack Game
 
 
 ## License
